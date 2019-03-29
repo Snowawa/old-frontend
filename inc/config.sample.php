@@ -1,17 +1,17 @@
 <?php
 // Database config
-define('DATABASE_HOST', 'localhost');	// MySQL host. usually localhost
+define('DATABASE_HOST', 'db');	// MySQL host. usually localhost
 define('DATABASE_USER', 'root');		// MySQL username
-define('DATABASE_PASS', 'meme');		// MySQL password
+define('DATABASE_PASS', 'changeme');		// MySQL password
 define('DATABASE_NAME', 'allora');		// Database name
 define('DATABASE_WHAT', 'host');		// "host" or unix socket path
 
 // Server urls, no slash
 $URL = [
-	'avatar' => 'https://a.ripple.moe',
-	'server' => 'https://ripple.moe',
-	'bancho' => 'http://c.ripple.moe',
-	'scores' => 'http://127.0.0.1:5002'
+	'avatar' => 'https://a.DOMAIN',
+	'server' => 'https://DOMAIN',
+	'bancho' => 'http://c.DOMAIN',
+	'scores' => 'http://lets:5002'
 ];
 
 // Changelog config
@@ -37,11 +37,11 @@ $KeyAkerino = '';
 $ServerStatusConfig = [
 	'service_status' => [
 		'enable' 			=> true, // Must be true if you want to enable "Service status" section
-		'bancho_url'        => 'http://127.0.0.1:5001', // Bancho URL
-		'avatars_url'       => 'http://127.0.0.1:5000', // Avatar server URL
-		'beatmap_url'       => 'http://bcache.zxq.co', 	// Beatmap mirror URL
-		'api_url'           => 'http://127.0.0.1/api', 	// Ripple API URL
-		'lets_url'          => 'http://127.0.0.1:5002', // LETS URL
+		'bancho_url'        => 'http://peppy:5001', // Bancho URL
+		'avatars_url'       => 'http://avatar_server:5000', // Avatar server URL
+		'beatmap_url'       => 'http://cheesegull', 	// Beatmap mirror URL
+		'api_url'           => 'http://rippleapi/api', 	// Ripple API URL
+		'lets_url'          => 'http://lets:5002', // LETS URL
 	],
 
 	'netdata' => [
@@ -63,7 +63,7 @@ $ScoresConfig = [
 	"enablePP" => true,
 	"useNewBeatmapsTable" => true,		// 0: get beatmaps names from beatmaps_names (old php scores server)
 										// 1: get beatmaps names from beatmaps (LETS)
-	"api_key" => "",
+	"api_key" => "changeme",
 	"rankRequestsQueueSize" => 20,
 	"rankRequestsPerUser" => 2
 ];
