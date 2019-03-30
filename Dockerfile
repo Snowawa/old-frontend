@@ -4,17 +4,19 @@ COPY . .
 
 RUN composer install
 
-FROM php
-WORKDIR /old-frontend
-COPY --from=0 /old-frontend .
-
-RUN docker-php-ext-install pdo pdo_mysql
-
-EXPOSE 9000
-ENV DOMAIN test.test
-
-RUN cp inc/config.sample.php inc/config.php
-RUN chmod +x entrypoint.sh
-
 ENTRYPOINT [ "./entrypoint.sh" ]
 CMD [ "php", "index.php" ]
+
+FROM richarvey/nginx-php-fpm
+WORKDIR /var/www/html
+COPY --from=0 /old-frontend .
+
+# prepare config
+RUN cp inc/config.sample.php inc/config.php
+
+# make variables overwritable
+COPY ./entrypoint.sh ./scripts/
+RUN chmod +x ./scripts/entrypoint.sh
+
+ENV DOMAIN test.test
+ENV SKIP_COMPOSER 1
