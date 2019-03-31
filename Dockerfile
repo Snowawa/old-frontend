@@ -19,4 +19,5 @@ COPY ./entrypoint.sh ./scripts/
 RUN chmod +x ./scripts/entrypoint.sh
 
 ENV DOMAIN test.test
+ENV MYSQL_ROOT_PASSWORD changeme
 ENV SKIP_COMPOSER 1

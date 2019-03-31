@@ -2,7 +2,7 @@
 // Database config
 define('DATABASE_HOST', 'db');	// MySQL host. usually localhost
 define('DATABASE_USER', 'root');		// MySQL username
-define('DATABASE_PASS', 'changeme');		// MySQL password
+define('DATABASE_PASS', 'MYSQL_ROOT_PASSWORD');		// MySQL password
 define('DATABASE_NAME', 'ripple');		// Database name
 define('DATABASE_WHAT', 'host');		// "host" or unix socket path
 
